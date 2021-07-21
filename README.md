@@ -20,10 +20,12 @@ En tant qu’ admin, jeux peux :
  - ajouter/supprimer/modifier des formations 
 
 
-2 types de rôles*
+2 types de rôles
 - ADMIN
 - UTILSATEUR INSCRIT
--
+
+
+
 
 
 
