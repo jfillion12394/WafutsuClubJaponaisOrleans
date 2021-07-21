@@ -15,27 +15,27 @@ class Training
      * @ORM\GeneratedValue
      * @ORM\Column(type="integer")
      */
-    private $id;
+    private int $id;
 
     /**
      * @ORM\Column(type="string", length=255, nullable=true)
      */
-    private $title;
+    private ?string $title;
 
     /**
      * @ORM\Column(type="text", nullable=true)
      */
-    private $content;
+    private ?string $content;
 
     /**
      * @ORM\Column(type="integer", nullable=true)
      */
-    private $duration;
+    private ?int $duration;
 
     /**
      * @ORM\Column(type="integer")
      */
-    private $spots;
+    private int $spots;
 
     public function getId(): ?int
     {

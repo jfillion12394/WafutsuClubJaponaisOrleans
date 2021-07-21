@@ -43,24 +43,20 @@
     Nous organisons de nombreuses actvités et cours de japonais toute l'année et pour tous les niveaux, n'hésitez pas à parcourir les cours qui vous intéressent et à vous inscrire dans
     la limite des places disponibles.
     </p>
-    <p class = "title text-center"> 
+    <p class = "title text-center">
      <stron>"がんばってね!"</strong>
     <p>
-
-        
-
-        
-
     <div class="row p-4">
         {% for training in trainings %}
             <div class="col-sm-6 mb-3">
                 <div class="card pale">
                 <div class="card-body">
                     <h5 class="card-title">{{ training.title }}</h5>
-                    <p class="card-text">{{ training.content }}  </p>  
+                    <p class="card-text">{{ training.content }}</p>
                     <a href="#" class="btn btn-primary"> {{ training.spots }} places, j'y vais</a>
                 </div>
                 </div>
             </div>
         {% endfor %}
     </div>
+    

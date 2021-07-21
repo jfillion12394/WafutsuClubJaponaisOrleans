@@ -17,7 +17,7 @@ class TrainingFixtures extends Fixture
         $class->setSpots(7);
         $manager->persist($class);
         $manager->flush();
-        
+
         $class = new Training();
         $class->setTitle("Inititation aux 'kana' Niveau 2 - KATAKANA 片仮名, カタカナ");
         $class->setContent("Cours d'écriture pour maîtiser le syllabaire Hirgana");

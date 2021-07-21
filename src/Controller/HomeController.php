@@ -14,7 +14,7 @@ class HomeController extends AbstractController
      */
     public function index(TrainingRepository $training): Response
     {
-        return $this->render('home/index.html.twig', ['trainings' => $training->findAll(),
-    ]);
+            return $this->render('home/index.html.twig', ['trainings' => $training->findAll(),
+            ]);
     }
 }
