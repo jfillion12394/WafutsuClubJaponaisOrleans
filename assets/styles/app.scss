@@ -20,6 +20,24 @@ h2 { font-family: Aclonica; font-size: 24px; font-style: normal; font-variant: n
  }
 
 
+.pale {
+    background-color: $red-100;
+    color: $dark;
+ }
+
+ .textuel {
+    background-color: $light;
+    color: $red;
+    font-size: 18px;
+ }
+
+
+ .title {
+    background-color: $light;
+    color: $red;
+    font-size: 30px;
+ }
+
 .foot {
     background-color: $red;
  }
