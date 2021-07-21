@@ -20,13 +20,13 @@ h2 { font-family: Aclonica; font-size: 24px; font-style: normal; font-variant: n
  }
 
 
- .foot {
-    background-color: #ff6c71
+.foot {
+    background-color: $red;
  }
 
- .foot2 {
-    background-color: rgba(0, 0, 0, 0.2);
- }
+.foot2 {
+    background-color: $footer;
+}
 
  
 
