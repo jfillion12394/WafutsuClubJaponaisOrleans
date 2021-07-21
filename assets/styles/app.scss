@@ -2,6 +2,37 @@
 @import "~bootstrap/scss/bootstrap";
 
 body {
-    background-color: $wild-color;
+    background-color: $bg;
     color: $light;
+    font-family: Aclonica; font-size: 24px; font-style: normal; font-variant: normal; font-weight: 700; line-height: 26.4px;
+
 }
+
+
+h2 { font-family: Aclonica; font-size: 24px; font-style: normal; font-variant: normal; font-weight: 700; line-height: 26.4px; } h3 { font-family: Aclonica; font-size: 14px; font-style: normal; font-variant: normal; font-weight: 700; line-height: 15.4px; } p { font-family: Aclonica; font-size: 14px; font-style: normal; font-variant: normal; font-weight: 400; line-height: 20px; } blockquote { font-family: Aclonica; font-size: 21px; font-style: normal; font-variant: normal; font-weight: 400; line-height: 30px; } pre { font-family: Aclonica; font-size: 13px; font-style: normal; font-variant: normal; font-weight: 400; line-height: 18.5714px; }
+
+.p {
+
+    font-family: Aclonica; font-size: 24px; font-style: normal; font-variant: normal; font-weight: 700; line-height: 26.4px;
+}
+
+.nav
+ {
+    background-color: $red-600;
+ }
+
+
+ .foot
+ {
+    background-color: #ff6c71
+ }
+
+ .foot2
+ {
+    background-color: rgba(0, 0, 0, 0.2);
+ }
+
+ 
+
+ 
+
