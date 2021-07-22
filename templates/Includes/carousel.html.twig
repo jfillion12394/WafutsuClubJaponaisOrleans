@@ -52,16 +52,13 @@
                 <div class="card pale">
                 <div class="card-body">
                     <h5 class="card-title">{{ training.title }}</h5>
-                    <p class="card-text">{{ training.content }}</p>    
-
+                    <p class="card-text">{{ training.content }}</p>
       {% if app.user == false %}
             <a href="/training/{{ training.id }}/edit" class="btn btn-primary disabled"
         {% endif %}
-
       {% if training.spots < 1  %}
         <a href="/training/{{ training.id }}/edit" class="btn btn-danger disabled"
         {% endif %}
-
                         {% if app.user %}
                             {% if app.user.roles[0] == "ROLE_USER" %}
                                 {% if training.user.count > 0 %}
@@ -79,10 +76,8 @@
                             {% else %}
                                             <a href="/training/{{ training.id }}/edit" class="btn btn-primary"
                             {% endif %}
-                            
                     >
                     {{ training.spots }} places, j'y vais</a>
-                  
                  {% if app.user %}
                     {% if app.user.roles[0] == "ROLE_USER" %}
                  {% if training.user.count > 0 %}
@@ -92,7 +87,6 @@
                 {% endif %}
             {% endif %}
              {% endif %}
-            
                 </div>
                 </div>
             </div>
