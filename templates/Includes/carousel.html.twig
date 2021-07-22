@@ -54,13 +54,29 @@
                     <h5 class="card-title">{{ training.title }}</h5>
                     <p class="card-text">{{ training.content }}</p>
                         {% if app.user %}
-                           <a href="/training/{{ training.id }}/edit" class="btn btn-primary"
+                                  {% if training.spots > 0 %}
+                                    {% if training.user.count == 0 %}
+                                        <a href="/training/{{ training.id }}/edit" class="btn btn-primary"
+                                        {% else %}
+                                         <a href="/training/{{ training.id }}/edit" class="btn btn-primary disabled"
+                                               {% endif %}
+                                        {% else %}
+                                         <a href="/training/{{ training.id }}/edit" class="btn btn-primary disabled"
+                                {% endif %}
                            {% else %}
                            <a href="/training/{{ training.id }}/edit" class="btn btn-primary disabled"
                           {% endif %}
-                    > {{ training.spots }} places, j'y vais</a>
+                    > 
+                    {{ training.spots }} places, j'y vais</a>
+
+                 {% if training.user.count > 0 %}
+                      <span class="badge  bg-success">Tu es inscrit</span>
+                            {% endif %}
                 </div>
                 </div>
             </div>
         {% endfor %}
     </div>
+
+
+                

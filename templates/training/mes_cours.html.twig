@@ -1,0 +1,42 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Training{% endblock %}
+
+{% block body %}
+
+
+
+<div class =  "pale text-center">
+    <br><br>
+    <h2>Tu es inscrit aux cours suivants:</h2>
+    <br><br>
+    <div class =  "row d-flex justify-content-center textuel">
+        <table class="w-50">
+        <tr>
+                <th><i>Ton cours</i></th>
+                <th><i>Ce que tu vas apprendre</i></th>
+        </tr>
+            <tr>
+                <th><hr></th>
+                <th><hr></th>
+        </tr>
+        {% if app.user %}
+            {% for training in trainings %}
+                {% if training.user.count > 0 %}
+                    <tr>
+                        <td>{{  training.title }}</td>
+                        <td>{{  training.content }}</td>
+                    <tr>
+                    <tr>
+                        <td><hr></td>
+                        <td><hr></td>
+                        </tr>
+                {% endif %}
+            {% endfor %}
+        {% endif %}
+        </table>
+    <div>
+  </div>
+
+
+{% endblock %}

@@ -36,6 +36,16 @@ class TrainingController extends AbstractController
     }
 
     /**
+     * @Route("/moi/", name="training_index", methods={"GET"})
+     */
+    public function myTrainings(TrainingRepository $trainingRepository): Response
+    {
+        return $this->render('training/mes_cours.html.twig', [
+            'trainings' => $trainingRepository->findAll(),
+        ]);
+    }
+    
+    /**
      * @Route("/new", name="training_new", methods={"GET","POST"})
      */
     public function new(Request $request): Response
