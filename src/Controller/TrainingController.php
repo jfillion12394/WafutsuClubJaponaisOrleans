@@ -44,7 +44,7 @@ class TrainingController extends AbstractController
             'trainings' => $trainingRepository->findAll(),
         ]);
     }
-    
+
     /**
      * @Route("/new", name="training_new", methods={"GET","POST"})
      */
