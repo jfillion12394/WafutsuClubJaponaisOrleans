@@ -3,6 +3,8 @@
 namespace App\Entity;
 
 use App\Repository\TrainingRepository;
+use Doctrine\Common\Collections\ArrayCollection;
+use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
@@ -36,6 +38,16 @@ class Training
      * @ORM\Column(type="integer")
      */
     private int $spots;
+
+    /**
+     * @ORM\ManyToMany(targetEntity=User::class, inversedBy="user")
+     */
+    private $user;
+
+    public function __construct()
+    {
+        $this->user = new ArrayCollection();
+    }
 
     public function getId(): ?int
     {
@@ -86,6 +98,30 @@ class Training
     public function setSpots(int $spots): self
     {
         $this->spots = $spots;
+
+        return $this;
+    }
+
+    /**
+     * @return Collection|User[]
+     */
+    public function getUser(): Collection
+    {
+        return $this->user;
+    }
+
+    public function addUser(User $user): self
+    {
+        if (!$this->user->contains($user)) {
+            $this->user[] = $user;
+        }
+
+        return $this;
+    }
+
+    public function removeUser(User $user): self
+    {
+        $this->user->removeElement($user);
 
         return $this;
     }

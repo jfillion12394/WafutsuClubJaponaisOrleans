@@ -1,0 +1,48 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}M'inscrire à ce cours{% endblock %}
+
+{% block body %}
+{{ form_start(form) }}
+
+
+ <div class ="pale w-100">
+    <div class =  "row d-flex justify-content-center p-5">
+     <h2 class = "text-center">
+  Etes-vous sûr(e) de vouloir confirmer votre inscription à ce cours ?
+  <a class = "btn btn-primary" href= "javascript:history.back()">ANNULER</a>
+  </h2>
+        {% block form_row %}
+            <div class="form_row row g-2">
+                {{ form_label(form.title, "Intitulé du cours") }}
+            </div>
+            {{ form_widget(form.title) }}
+            {{ form_errors(form.title) }}
+
+            <div class="form_row row g-2">
+                {{ form_label(form.content, "Description du cours") }}
+            </div>
+            {{ form_widget(form.content) }}
+            {{ form_errors(form.content) }}
+
+            <div class="form_row row g-2">
+                {{ form_label(form.spots, "Nombre de places disponibles acutellement") }}
+            </div>
+            {{ form_widget(form.spots) }}
+            {{ form_errors(form.spots) }}
+
+            <div class="form_row row g-2">
+                {{ form_label(form.duration, "Durée du cours en heures") }}
+            </div>
+            {{ form_widget(form.duration) }}
+            {{ form_errors(form.duration) }}
+
+            <button class="btn btn-primary text-light mt-4">{{ button_label|default('Ok, je confirme mon inscription ce cours') }}</button>
+       
+        {% endblock form_row %}
+
+       
+    </div>
+  </div>
+{{ form_end(form) }}
+{% endblock %}
