@@ -81,7 +81,7 @@ class TrainingController extends AbstractController
             //recupérer le user en cours;
             $user =  $this->security->getUser();
             //ajouter le user à la table
-            $dispo =  $training->getSpots() -1;
+            $dispo =  $training->getSpots() - 1;
             $training->setSpots($dispo);
             $training->addUser($user);
             $this->getDoctrine()->getManager()->flush();
@@ -100,7 +100,7 @@ class TrainingController extends AbstractController
      */
     public function delete(Request $request, Training $training): Response
     {
-        if ($this->isCsrfTokenValid('delete'.$training->getId(), $request->request->get('_token'))) {
+        if ($this->isCsrfTokenValid('delete' . $training->getId(), $request->request->get('_token'))) {
             $entityManager = $this->getDoctrine()->getManager();
             $entityManager->remove($training);
             $entityManager->flush();

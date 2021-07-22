@@ -54,9 +54,9 @@
                     <h5 class="card-title">{{ training.title }}</h5>
                     <p class="card-text">{{ training.content }}</p>
                         {% if app.user %}
-                           <a href="/training/{{ training.id }}/edit" class="btn btn-primary" 
+                           <a href="/training/{{ training.id }}/edit" class="btn btn-primary"
                            {% else %}
-                           <a href="/training/{{ training.id }}/edit" class="btn btn-primary disabled" 
+                           <a href="/training/{{ training.id }}/edit" class="btn btn-primary disabled"
                           {% endif %}
                     > {{ training.spots }} places, j'y vais</a>
                 </div>
