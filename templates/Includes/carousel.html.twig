@@ -53,25 +53,40 @@
                 <div class="card-body">
                     <h5 class="card-title">{{ training.title }}</h5>
                     <p class="card-text">{{ training.content }}</p>
+      {% if app.user == false %}
+            <a href="/training/{{ training.id }}/edit" class="btn btn-primary disabled"
+        {% endif %}
+      {% if training.spots < 1  %}
+        <a href="/training/{{ training.id }}/edit" class="btn btn-danger disabled"
+        {% endif %}
                         {% if app.user %}
-                                  {% if training.spots > 0 %}
-                                    {% if training.user.count == 0 %}
-                                        <a href="/training/{{ training.id }}/edit" class="btn btn-primary"
+                            {% if app.user.roles[0] == "ROLE_USER" %}
+                                {% if training.user.count > 0 %}
+                                    {% if training.user.0.email == app.user.email  %}
+                                        <a href="/training/{{ training.id }}/edit" class="btn btn-primary disabled"
                                         {% else %}
-                                         <a href="/training/{{ training.id }}/edit" class="btn btn-primary disabled"
-                                               {% endif %}
-                                        {% else %}
-                                         <a href="/training/{{ training.id }}/edit" class="btn btn-primary disabled"
+                                            <a href="/training/{{ training.id }}/edit" class="btn btn-primary"
+                                        {% endif %}
+                                            {% else %}
+                                            <a href="/training/{{ training.id }}/edit" class="btn btn-primary"
                                 {% endif %}
-                           {% else %}
-                           <a href="/training/{{ training.id }}/edit" class="btn btn-primary disabled"
-                          {% endif %}
+                                {% else %}
+                                            <a href="/training/{{ training.id }}/edit" class="btn btn-primary"
+                            {% endif %}
+                            {% else %}
+                                            <a href="/training/{{ training.id }}/edit" class="btn btn-primary"
+                            {% endif %}
                     >
                     {{ training.spots }} places, j'y vais</a>
-
+                 {% if app.user %}
+                    {% if app.user.roles[0] == "ROLE_USER" %}
                  {% if training.user.count > 0 %}
+                     {% if training.user.0.email == app.user.email  %}
                       <span class="badge  bg-success">Tu es inscrit</span>
-                            {% endif %}
+                         {% endif %}
+                {% endif %}
+            {% endif %}
+             {% endif %}
                 </div>
                 </div>
             </div>

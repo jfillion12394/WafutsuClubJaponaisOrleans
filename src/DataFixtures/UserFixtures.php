@@ -37,5 +37,15 @@ class UserFixtures extends Fixture
         ));
         $manager->persist($admin);
         $manager->flush();
+
+        $admin = new User();
+        $admin->setEmail('test@free.fr');
+        $admin->setRoles(['ROLE_USER']);
+        $admin->setPassword($this->passwordEncoder->encodePassword(
+            $admin,
+            '1239free'
+        ));
+        $manager->persist($admin);
+        $manager->flush();
     }
 }
