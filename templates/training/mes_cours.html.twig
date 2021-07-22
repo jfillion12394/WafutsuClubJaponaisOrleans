@@ -23,6 +23,7 @@
         {% if app.user %}
             {% for training in trainings %}
                 {% if training.user.count > 0 %}
+                      {% if training.user.0.email == app.user.email %} 
                     <tr>
                         <td>{{ training.title }}</td>
                         <td>{{ training.content }}</td>
@@ -31,12 +32,11 @@
                         <td><hr></td>
                         <td><hr></td>
                         </tr>
+                        {% endif %}
                 {% endif %}
             {% endfor %}
         {% endif %}
         </table>
     <div>
   </div>
-
-
 {% endblock %}
